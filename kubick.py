@@ -5,3 +5,14 @@
 # Вероятность выпадения каждого значения.
 # Максимальное количество подряд выпавших одинаковых значений.
 # Визуализируйте результаты в виде гистограммы.
+
+import matplotlib.pyplot as plt
+import numpy as np
+from random import randint
+
+
+s = []
+for i in range(1000):
+    s.append(randint(1, 6))
+
+print(s.count(1))
