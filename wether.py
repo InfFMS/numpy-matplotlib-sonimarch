@@ -28,10 +28,8 @@ print(f'Самая длинная последовательность дней,
 
 fig = plt.figure(figsize = (8, 8))
 ax = plt.subplot(2,1,1)
-x = [i for i in range(1, 366)]
-plt.plot(x, s)
-r = plt.Rectangle((5, 5), 10, 3, color='red')
-ax.add_patch(r)
+for i in range(365):
+    plt.scatter(i, s[i], color='red')
 
 
 plt.subplot(2,1,2)

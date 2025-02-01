@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+print('Введите координаты')
+p1, p2 = int(input()), int(input())
 d = np.zeros((8, 8))
 for i in range(8):
     for j in range(8):
@@ -16,23 +18,22 @@ fig, ax = plt.subplots()
 plt.imshow(d, cmap='Greys')
 
 for x in range(8):
-    k = (x, 4)
+    k = (x, 8 - p2)
     ci1 = plt.Circle(k, 0.4, color='green')
     ax.add_patch(ci1)
 for x in range(8):
-    k = (3, x)
+    k = (p1 - 1, x)
     ci1 = plt.Circle(k, 0.4, color='green')
     ax.add_patch(ci1)
 for x in range(8):
-    k = (x, x + 1)
+    k = (x + p1 - 1 -(8 - p2), x)
     ci1 = plt.Circle(k, 0.4, color='green')
     ax.add_patch(ci1)
 for x in range(8):
-    k = (x, 7 - x)
+    k = (-x + p1 - 1 +(8 - p2), x)
     ci1 = plt.Circle(k, 0.4, color='green')
     ax.add_patch(ci1)
-
-ci = plt.Circle((3, 4), 0.4, color='red')
+ci = plt.Circle((p1 - 1, 8 - p2), 0.4, color='red')
 ax.add_patch(ci)
 plt.xticks(range(8), labels=[i for i in "ABCDEFGH"])
 plt.yticks(range(8), labels=[i for i in range(8, 0, -1)])
