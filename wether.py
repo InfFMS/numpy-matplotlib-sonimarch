@@ -28,11 +28,23 @@ print(f'Самая длинная последовательность дней,
 
 fig = plt.figure(figsize = (8, 8))
 ax = plt.subplot(2,1,1)
-for i in range(365):
-    plt.scatter(i, s[i], color='red')
+plt.xlabel('Дни')
+plt.ylabel('Температура')
 
+x = [0, 365]
+y = [0, 0]
+ax.plot(x, y, color='grey')
+for i in range(365):
+    if s[i] > 0:
+        plt.scatter(i, s[i], color='red')
+    elif s[i] == 0:
+        plt.scatter(i, s[i], color='#a515d1')
+    else:
+        plt.scatter(i, s[i], color='blue')
 
 plt.subplot(2,1,2)
+plt.xlabel('Температура')
+plt.ylabel('Количество дней')
 a = [i for i in range(-10, 36)]
 b = [s.count(i) for i in a]
 plt.bar(a, b)
